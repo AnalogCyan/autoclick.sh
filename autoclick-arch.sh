@@ -21,7 +21,7 @@ sleep 5
 
 while [ 1 ]; do
   xdotool click 1 &
-  sleep 15
+  sleep 5
 done
 
 # to adjust timings, change the '5' in the 'sleep 5' line to a time in seconds, note that it may be difficult to kill this script if the time is too short.
