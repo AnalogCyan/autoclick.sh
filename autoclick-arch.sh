@@ -20,8 +20,8 @@ sleep 5
 # The code below is what does the actual clicking, only edit it when adjusting settings.
 
 while [ 1 ]; do
-  xdotool mousemove 960 539 click 1 &
-  sleep 5
+  xdotool click 1 &
+  sleep 15
 done
 
 # to update the coordinates run 'xdotool getmouselocation' with mouse in center of the crosshair in minecraft, over the minecraft window (alt-tab into a terminal window to the side to run the command while mouse still in MC window).

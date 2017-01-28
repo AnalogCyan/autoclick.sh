@@ -20,7 +20,7 @@ sleep 5
 # The code below is what does the actual clicking, only edit it when adjusting settings.
 
 while [ 1 ]; do
-  xdotool mousemove 960 539 click 1 &
+  xdotool click 1 &
   sleep 5
 done
 
