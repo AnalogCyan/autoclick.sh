@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo Open this script with a text editor to adjust coordinates and timings.
+echo Open this script with a text editor to adjust settings.
 sleep 1
 echo There are comments in this script to assist you in adjusting settings.
 sleep 1
@@ -23,7 +23,5 @@ while [ 1 ]; do
   xdotool click 1 &
   sleep 15
 done
-
-# to update the coordinates run 'xdotool getmouselocation' with mouse in center of the crosshair in minecraft, over the minecraft window (alt-tab into a terminal window to the side to run the command while mouse still in MC window).
 
 # to adjust timings, change the '5' in the 'sleep 5' line to a time in seconds, note that it may be difficult to kill this script if the time is too short.
