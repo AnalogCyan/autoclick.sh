@@ -26,7 +26,7 @@ if which pacman >/dev/null; then
 	if ! pacman -Qq | grep -qw xdotool; then
 		echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
 		sleep 2
-		sudo pacman -S xdotool
+		sudo pacman -Sy xdotool
 	fi
 #check if apt is installed, if it is use it to check if xdotool is instaled and install it if it isn't
 #elif command -v apt >/dev/null; then
@@ -34,6 +34,7 @@ elif which apt >/dev/null; then
 	if ! dpkg -l | grep -qw xdotool; then
 		echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
 		sleep 2
+		sudo apt-get update
 		sudo apt-get install xdotool
 	fi
 #if both pacman and apt couldn't be found, report error
