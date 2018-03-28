@@ -7,7 +7,7 @@ NC='\033[0m' # No Color
 
 echo -- autoclick.sh --
 sleep 1
-echo --   ver. 2.0   --
+echo --   ver. 2.1.1   --
 sleep 1
 echo This script is designed to be run on a Debian or Arch based system.
 sleep 1
