@@ -15,33 +15,31 @@ echo Open this script with a text editor to adjust settings.
 sleep 1
 echo There are comments in this script to assist you in adjusting settings.
 sleep 1
-echo Quckly [Alt-Tab] back to this window and [Ctrl-C] to quit the script. 
-sleep 1
 echo Ensuring xdotool is installed...
 sleep 1
 
 #check if pacman is installed, if it is use it to check if xdotool is instaled and install it if it isn't
 #if command -v pacman >/dev/null; then
 if which pacman >/dev/null; then
-	if ! pacman -Qq | grep -qw xdotool; then
-		echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
-		sleep 2
-		sudo pacman -Sy xdotool
-	fi
-#check if apt is installed, if it is use it to check if xdotool is instaled and install it if it isn't
-#elif command -v apt >/dev/null; then
-elif which apt >/dev/null; then
-	if ! dpkg -l | grep -qw xdotool; then
-		echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
-		sleep 2
-		sudo apt-get update
-		sudo apt-get install xdotool
-	fi
-#if both pacman and apt couldn't be found, report error
+    if ! pacman -Qq | grep -qw xdotool; then
+        echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
+        sleep 2
+        sudo pacman -Sy xdotool
+    fi
+    #check if apt is installed, if it is use it to check if xdotool is instaled and install it if it isn't
+    #elif command -v apt >/dev/null; then
+    elif which apt >/dev/null; then
+    if ! dpkg -l | grep -qw xdotool; then
+        echo -e "${RED}xdotool not found, installing, this may ask for your password...${NC}"
+        sleep 2
+        sudo apt-get update
+        sudo apt-get install xdotool
+    fi
+    #if both pacman and apt couldn't be found, report error
 else
-	echo pacman or apt not found! exiting...
-	sleep 5
-	exit 1
+    echo pacman or apt not found! exiting...
+    sleep 5
+    exit 1
 fi
 
 sleep 1
@@ -52,8 +50,8 @@ sleep 5
 # The code below is what does the actual clicking, only edit it when adjusting settings.
 
 while [ 1 ]; do
-  xdotool click 1 &
-  sleep 5
+    xdotool click 1 &
+    sleep 5
 done
 
 # to adjust timings, change the '5' in the 'sleep 5' line to a time in seconds, note that it may be difficult to kill this script if the time is too short.
