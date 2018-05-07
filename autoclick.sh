@@ -5,15 +5,11 @@ GREEN='\033[1;32m'
 WHITE='\033[1;37m'
 NC='\033[0m' # No Color
 
-echo -- autoclick.sh --
-sleep 1
-echo --   ver. 2.1.1   --
+clear
+echo "-- autoclick.sh - ver. 2.2.0 --"
+echo " "
 sleep 1
 echo This script is designed to be run on a Debian or Arch based system.
-sleep 1
-echo Open this script with a text editor to adjust settings.
-sleep 1
-echo There are comments in this script to assist you in adjusting settings.
 sleep 1
 echo Ensuring xdotool is installed...
 sleep 1
@@ -42,19 +38,36 @@ else
     exit 1
 fi
 
+sleep 2
+clear
+echo "-- autoclick.sh - ver. 2.2.0 --"
+echo " "
+echo "What mouse button would you like pressed?"
+echo "1 (left), 2 (middle), or 3 (right). "
+read mouse
 sleep 1
-echo -e "${GREEN}This script will begin in 5 seconds...${NC}"
+clear
+echo "-- autoclick.sh - ver. 2.2.0 --"
+echo " "
+echo "How long between each mouse press (in seconds)? "
+read clock
+
+sleep 1
+clear
+echo "-- autoclick.sh - ver. 2.2.0 --"
+echo " "
+echo -e "${GREEN}This script will begin in 5 seconds with these settings:${NC}"
+echo "Mouse: $mouse  Delay: $clock"
 echo -e "Use ${WHITE}[Ctrl-C]${NC} in this terminal to quit."
 sleep 5
 
-# The code below is what does the actual clicking, only edit it when adjusting settings.
+# The code below is what does the actual clicking.
 
 while [ 1 ]; do
-    xdotool click 1 &
-    sleep 5
+    xdotool click $mouse &
+    sleep $clock
 done
 
-# to adjust timings, change the '5' in the 'sleep 5' line to a time in seconds, note that it may be difficult to kill this script if the time is too short.
-
-# change the number after 'xdotool ckick' to switch between left and right click.
-# 1 = left, 3 = right
+# The variable $mouse controls what mouse button is pressed.
+# The bariable $clock controls how long (in seconds) between each button press.
+# Note that it may be difficult to kill this script if the time is too short.
